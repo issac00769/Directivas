@@ -24,6 +24,7 @@ const agreGenero = () => {
 
 const submitForm = () =>{
   enviado.value = true;
+
 }
 
 
@@ -36,7 +37,7 @@ const submitForm = () =>{
       <div class="campo">
         <label for="nombre" class="label">Nombre:</label>
         <input type="text" id="nombre" v-model="nombre" class="input">
-        <span v-if="nombre.length < 5 || nombre.length > 18" class="mensaje-error">El nombre debe tener entre 5 y 18 caracteres.</span>
+        <span v-if="nombre.length < 5 || nombre.length > 18" class="mensaje-error" id="id">El nombre debe tener entre 5 y 18 caracteres.</span>
       </div>
       <div class="campo">
         <label for="apellido" class="label">Apellido:</label>
@@ -45,7 +46,7 @@ const submitForm = () =>{
       </div>
       <div class="campo">
         <label for="edad" class="label">Edad:</label>
-        <input type="number" id="edad" v-model.number="edad" class="input">
+        <input type="number" min="0" id="edad" v-model.number="edad" class="input">
         <span v-if="edad <= 0 || edad >= 60" class="mensaje-error">La edad debe ser mayor a 0 y menor a 60.</span>
       </div>
       <div class="campo">
@@ -70,18 +71,19 @@ const submitForm = () =>{
 /* Estilos generales */
 .main {
   font-family: 'Arial', sans-serif;
-  padding: 50px;
-  background-color: #000000;
+  padding: 80px;
+  background-color: #34495e;
 }
 
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #f5f5f5;
+  font-weight: bold;
 }
 
 .input {
-  width: 100%;
+  width:100%;
   padding: 12px;
   font-size: 16px;
   margin-bottom: 10px;
@@ -91,13 +93,13 @@ h1 {
 }
 
 .formulario {
-  border: 1px solid #000000;
-  padding: 20px;
+  border: 1px solid #34495e;
+  padding: 30px;
   
   border-radius: 8px;
-  background-color: #000000;
+  background-color: #34495e;
   margin: 0 auto;
-  margin-top: 50px;
+
 }
 
 .campo {
@@ -111,29 +113,30 @@ h1 {
 }
 
 .boton {
-  background-color: #c62db9;
+  background-color: #41b883;
   color: #fff;
-  padding: 12px 20px;
+  padding: 12px 80px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: block;
   margin: 0 auto;
 }
 
 .boton:hover {
-  background-color: #c62db9;
+  background-color: #ffffff;
+  color: #000;
+  font-weight: bold;
 }
 
 .mensaje-error {
-  color: #c62db9;
+  color: #fff;
   font-size: 14px;
   display: block;
   margin-top: 5px;
 }
 
 .mensaje-confirmacion {
-  color: #d400ff;
+  color: #fff;
   font-size: 18px;
   margin-top: 20px;
   font-weight: bold;

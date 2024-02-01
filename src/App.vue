@@ -4,16 +4,9 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
+  <div class="mitad">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-
-      <nav>
-
-      </nav>
-    </div>
-  </header>
+  </div>
 
   <RouterView />
 </template>
