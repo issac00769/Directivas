@@ -14,7 +14,6 @@ const validarFormulario = () => {
   const apellidoValido = apellido.value !== nombre.value;
   const edadValida = edad.value > 0 && edad.value < 60;
   return nombreValido && apellidoValido && edadValida;
-  
 }
 
 const agreGenero = () => {
@@ -26,12 +25,14 @@ const agreGenero = () => {
 const submitForm = () =>{
   enviado.value = true;
 }
+
+
 </script>
 
 <template>
   <main class="main">
-    <h1>Formulario de Registro</h1>
     <form @submit.prevent="submitForm" class="formulario">
+      <h1>Formulario de Registro</h1>
       <div class="campo">
         <label for="nombre" class="label">Nombre:</label>
         <input type="text" id="nombre" v-model="nombre" class="input">
@@ -69,15 +70,14 @@ const submitForm = () =>{
 /* Estilos generales */
 .main {
   font-family: 'Arial', sans-serif;
-  padding: 20px;
-  background-color: #f0f0f0;
+  padding: 50px;
+  background-color: #000000;
 }
 
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
-  text-align: center;
+  color: #f5f5f5;
 }
 
 .input {
@@ -85,16 +85,17 @@ h1 {
   padding: 12px;
   font-size: 16px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   box-sizing: border-box;
 }
 
 .formulario {
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   padding: 20px;
+  
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #000000;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -106,11 +107,11 @@ h1 {
 .label {
   font-weight: bold;
   display: block;
-  color: #333;
+  color: #ffffff;
 }
 
 .boton {
-  background-color: #4caf50;
+  background-color: #c62db9;
   color: #fff;
   padding: 12px 20px;
   border: none;
@@ -121,35 +122,21 @@ h1 {
 }
 
 .boton:hover {
-  background-color: #45a049;
+  background-color: #c62db9;
 }
 
 .mensaje-error {
-  color: #d9534f;
+  color: #c62db9;
   font-size: 14px;
   display: block;
   margin-top: 5px;
 }
 
 .mensaje-confirmacion {
-  color: #5bc0de;
+  color: #d400ff;
   font-size: 18px;
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* Estilos responsivos */
-@media (max-width: 600px) {
-  .formulario {
-    max-width: 100%;
-  }
-
-  .campo {
-    margin-bottom: 15px;
-  }
-
-  .boton {
-    width: 100%;
-  }
-}
 </style>
